@@ -1,0 +1,31 @@
+import telebot
+bot = telebot.TeleBot("830566337:AAE8woFSiUysslmWKsc7E_hXx9OBDYlHUTE")
+
+#Function to get information from the ticket image 
+#@bot.message_handler(commands=['ticket'])
+#def get_ticket_number(messages):
+    #for m in messages:
+        #if m.content_type == "text":
+             #bot.reply_to(m, "Enter the ticket number")
+        #elif m.content_type == "photo":
+              #bot.reply_to(m,"Its a picture")
+              #tessdata_dir_config = "/usr/share/tesseract-ocr/4.00/tessdata"
+              #print(pytesseract.image_to_data(Image.open(m), config=tessdata_dir_config))
+              #pdf = pytesseract.image_to_pdf_or_hocr('m', extension='pdf')
+
+
+# Demo function that shows functionality of the bot
+def get_ticket_number(messages):
+    for i in messages:
+        if i.text == "4w5jh42k":
+            bot.reply_to(i, "The ticket is regestered and we will keep you updated")
+        elif i.text == "67trfr54":
+            bot.reply_to(i, "The ticket is regestered and we will keep you updated")
+            bot.reply_to(i, "There are severe delays on your trip at Somewhere \n These are your new travel options:\n(A) Fully Covered\n(1) 10:33 Station 1\n |    Train ABC \n(2) 13:39 Station 2 \nDuration: 3:06\nExpected price: 0$ (-12$ expected reembursement)\n\n(B) Partly Covered\n(1) 10:33 Station 1\n |     Train XZY\n(2) 11:12 Station 2\n |    Train MLK\n(3) 12:39 Station 3\nDuration: 2:06\nExpected price: 7$ (-12$ expected reembursement)\n\n(C) Not Covered\n(1) 10:37 Station 1\n |    UBER\n(2) 11:12 Station 2\n |    Train MLK\n(3) 11:39 Station 3\nDuration: 1:02\nExpected price: 19$ (-12$ expected reembursement)")
+        elif i.content_type == "photo":
+            bot.reply_to(i, "This ticket is regestered and we will keep you updated")
+
+
+bot.set_update_listener(get_ticket_number)
+
+bot.polling()
